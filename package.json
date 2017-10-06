@@ -1,0 +1,24 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base build/",
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jawan94/ReactApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jawan94/ReactApp/issues"
+  },
+  "homepage": "https://github.com/Jawan94/ReactApp#readme",
+  "devDependencies": {
+    "webpack-dev-server": "^2.9.1"
+  }
+}
