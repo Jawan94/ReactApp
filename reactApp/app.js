@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-var dummyData = [
-  {taskText: 'shower', completed: true},
-  {taskText: 'sleep', completed: false},
-  {taskText: 'eat', completed: true},
-  {taskText: 'workout', completed: false},
-  {taskText: 'study', completed: true}
-                ]
 
 
 class TodoList extends React.Component {
 constructor(props) {
   super(props);
+  this.state = {
+    todos: []
+  }
+}
+componentDidMount() {
+  this.setState({todos: this.props.list})
 }
 render() {
   return (
   <ul>
-   {dummyData.map((item) => <Todo task = {item}/>)}
+   {this.state.todos.map((item) => <Todo task = {item}/>)}
   </ul>
     )
   }
@@ -53,13 +52,22 @@ return (
 
 class TodoApp extends React.Component {
 constructor(props){
-  super(props)
+  super(props);
+  this.state = {
+    todos: [
+      {taskText: 'shower', completed: true},
+      {taskText: 'sleep', completed: false},
+      {taskText: 'eat', completed: true},
+      {taskText: 'workout', completed: false},
+      {taskText: 'study', completed: true}
+    ]
+  }
 }
   render() {
     return(
       <div>
   <InputLine/>
-  <TodoList/>
+  <TodoList list = {this.state.todos}/>
   </div>
     )
   }
