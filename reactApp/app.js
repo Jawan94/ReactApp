@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-var dummyData = ['shower', 'sleep', 'eat', 'workout', 'study']
+var dummyData = [
+  {taskText: 'shower', completed: true},
+  {taskText: 'sleep', completed: false},
+  {taskText: 'eat', completed: true},
+  {taskText: 'workout', completed: false},
+  {taskText: 'study', completed: true}
+                ]
 
 
 class TodoList extends React.Component {
@@ -24,7 +30,8 @@ render() {
   return(
     <div>
     <li> <button className= "btn btn-default">x</button>
-    {this.props.task} </li>
+  {this.props.task.completed ? <strike>{this.props.task.taskText}</strike> : this.props.task.taskText}
+     </li>
     </div>
   )
   }
